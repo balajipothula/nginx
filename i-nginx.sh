@@ -11,19 +11,19 @@ readonly LIBRESSL_VER=2.6.1
 readonly ROOT=~/nginx-root
 
 # Updating repo.
-sudo apt-get update
+sudo apt -y update
 
 # Installing build tools.
-sudo apt-get install -y build-essential make
+sudo apt -y install build-essential make
 
 # Downloading necessary src.
-sudo wget https://zlib.net/zlib-$ZLIB_VER.tar.gz && tar -zxf zlib-$ZLIB_VER.tar.gz
-sudo wget http://nginx.org/download/nginx-$NGINX_VER.tar.gz && tar -zxf nginx-$NGINX_VER.tar.gz
-sudo wget https://ftp.pcre.org/pub/pcre/pcre-$PCRE_VER.tar.gz && tar -zxf pcre-$PCRE_VER.tar.gz
-sudo wget https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-$LIBRESSL_VER.tar.gz && tar -zxf libressl-$LIBRESSL_VER.tar.gz
+wget https://zlib.net/zlib-$ZLIB_VER.tar.gz                                     && tar xzf zlib-$ZLIB_VER.tar.gz
+wget http://nginx.org/download/nginx-$NGINX_VER.tar.gz                          && tar xxf nginx-$NGINX_VER.tar.gz
+wget https://ftp.pcre.org/pub/pcre/pcre-$PCRE_VER.tar.gz                        && tar xzf pcre-$PCRE_VER.tar.gz
+wget https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-$LIBRESSL_VER.tar.gz && tar xzf libressl-$LIBRESSL_VER.tar.gz
 
 # Removing src .tar.gz files.
-sudo rm -rf *.tar.gz
+rm -rf *.tar.gz
 
 # Installing zlib.
 cd ~/zlib-$ZLIB_VER
@@ -67,5 +67,4 @@ sudo make
 sudo make install
 
 # Removing src folders.
-sudo rm -rf ~/pcre-$PCRE_VER ~/zlib-$ZLIB_VER ~/libressl-$LIBRESSL_VER ~/nginx-$NGINX_VER
-
+rm -rf ~/pcre-$PCRE_VER ~/zlib-$ZLIB_VER ~/libressl-$LIBRESSL_VER ~/nginx-$NGINX_VER
