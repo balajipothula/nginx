@@ -2,7 +2,7 @@
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 16 August 2019,
-# Description : Adding nginx user on rhel.
+# Description : Adding nginx user on Ubuntu.
 
 # Note        : Please run this file with root privilages.
 
@@ -10,7 +10,7 @@
 set -e
 
 # adding new user account.
-adduser -m -c "NGINX Server" nginx
+useradd -m -c "NGINX Server" -s /bin/bash nginx
 
 # deleting user password access.
 passwd -d nginx
