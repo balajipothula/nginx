@@ -9,8 +9,13 @@
 # exits any line in the bash script fails.
 set -e
 
-# adding new user account.
+# adding new user account on ubuntu.
 useradd -m -c "NGINX Server" -s /bin/bash nginx
+
+# adding new user account on rhel.
+<<comment
+adduser -m -c "NGINX Server" -s /bin/bash nginx
+comment
 
 # deleting user password access.
 passwd -d nginx
