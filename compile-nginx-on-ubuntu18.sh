@@ -13,6 +13,9 @@ set -x
 # update package repositories.
 sudo apt -y update
 
+# upgrading packages.
+sudo apt -y upgrade
+
 # build essentials installing.
 sudo apt -y install autoconf        \
                     automake        \
