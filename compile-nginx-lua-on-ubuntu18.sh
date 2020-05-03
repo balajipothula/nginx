@@ -55,8 +55,8 @@ mv       $HOME/pcre-* $HOME/pcresrc
 # libressl downloading and extracting.
 curl -JL https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.6.1.tar.gz -o $HOME/libressl.tar.gz && \
 tar  -xf $HOME/libressl.tar.gz -C $HOME                                                              && \
-rm   -rf  $HOME/libressl.tar.gz                                                                      && \
-mv        $HOME/libressl-* $HOME/libresslsrc
+rm   -rf $HOME/libressl.tar.gz                                                                       && \
+mv       $HOME/libressl-* $HOME/libresslsrc
 
 # nginx downloading, extracting and compiling.
 curl -JL https://openresty.org/download/openresty-1.15.8.3.tar.gz -o $HOME/nginx.tar.gz && \
