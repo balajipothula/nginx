@@ -31,11 +31,12 @@ mv        $HOME/luajit2 $HOME/luajitsrc                         && \
 cd        $HOME/luajitsrc                                       && \
 make                                                            && \
 make install CC="gcc -m32" TARGET_SYS=Linux PREFIX=$HOME/luajit && \
-cd       $HOME                                                  && \
-rm  -rf  $HOME/luajitsrc
+cd        $HOME                                                 && \
+rm  -rf   $HOME/luajitsrc
 
 # setting luajit library and include path.
 echo "export LUAJIT_LIB=$HOME/luajit/lib"                | tee -a $HOME/.bashrc $HOME/.profile && \
+echo "export LD_LIBRARY_PATH=$HOME/luajit/lib"           | tee -a $HOME/.bashrc $HOME/.profile && \
 echo "export LUAJIT_INC=$HOME/luajit/include/luajit-2.1" | tee -a $HOME/.bashrc $HOME/.profile && \
 source $HOME/.bashrc $HOME/.profile
 
