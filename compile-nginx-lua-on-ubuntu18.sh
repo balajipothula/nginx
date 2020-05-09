@@ -23,8 +23,7 @@ sudo apt -y install autoconf        \
                     g++             \
                     gcc             \
                     git             \
-                    make            \
-                    tcl
+                    make
 
 # cloning openrestry luajit2 from git and compiling.
 git clone https://github.com/openresty/luajit2.git              && \
