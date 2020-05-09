@@ -6,6 +6,9 @@
 
 # Note        : Please run this file with root privilages.
 
+# adding nginx user without home, shell and no login.
+# sudo adduser --system --no-create-home --shell /bin/false --group --disabled-login nginx
+
 # exits any line in the bash script fails.
 set -e
 
