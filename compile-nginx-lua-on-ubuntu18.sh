@@ -92,6 +92,9 @@ cd       $HOME/nginxsrc                                                         
 make                                                                                            && \
 make install
 
+# create nginx temp folders.
+mkdir -p $HOME/nginx/{client_body_temp,fastcgi_temp,proxy_temp,scgi_temp,uwsgi_temp}
+
 # cleaning process.
 rm -rf $HOME/{luajit,luajitsrc,nginxsrc,libresslsrc,pcresrc,zlibsrc}
 rm -rf $HOME/nginx/{COPYRIGHT,resty.index,pod,site}
