@@ -30,9 +30,7 @@ git clone https://github.com/openresty/luajit2.git              && \
 mv        $HOME/luajit2 $HOME/luajitsrc                         && \
 cd        $HOME/luajitsrc                                       && \
 make                                                            && \
-make install CC="gcc -m32" TARGET_SYS=Linux PREFIX=$HOME/luajit && \
-cd        $HOME                                                 && \
-rm  -rf   $HOME/luajitsrc
+make install CC="gcc -m32" TARGET_SYS=Linux PREFIX=$HOME/luajit
 
 # setting luajit library and include path.
 echo "export LUAJIT_LIB=$HOME/luajit/lib"                | tee -a $HOME/.bashrc $HOME/.profile && \
@@ -90,4 +88,4 @@ make                                                                            
 make install
 
 # cleaning process.
-rm -rf $HOME/{luajit,nginxsrc,libresslsrc,pcresrc,zlibsrc}
+rm -rf $HOME/{luajit,luajitsrc,nginxsrc,libresslsrc,pcresrc,zlibsrc}
