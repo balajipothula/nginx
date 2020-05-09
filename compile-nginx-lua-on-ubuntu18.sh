@@ -89,3 +89,4 @@ make install
 
 # cleaning process.
 rm -rf $HOME/{luajit,luajitsrc,nginxsrc,libresslsrc,pcresrc,zlibsrc}
+rm -rf $HOME/nginx/{COPYRIGHT,resty.index,nginx,pod,site}
