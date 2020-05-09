@@ -73,3 +73,6 @@ cd       $HOME/nginxsrc                                                       &&
             --with-http_ssl_module                                            && \
 make                                                                          && \
 make install
+
+# cleaning process.
+rm -rf $HOME/{nginxsrc,libresslsrc,pcresrc,zlibsrc}
