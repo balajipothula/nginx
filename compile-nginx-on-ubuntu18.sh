@@ -22,8 +22,8 @@ sudo apt -y install autoconf        \
                     build-essential \
                     g++             \
                     gcc             \
-                    make            \
-                    tcl
+                    git             \
+                    make
 
 # zlib downloading and extracting.
 curl -JL https://zlib.net/zlib-1.2.11.tar.gz -o $HOME/zlib.tar.gz && \
@@ -56,6 +56,11 @@ cd       $HOME/nginxsrc                                                       &&
             --http-log-path=$HOME/nginx/log/access.log                           \
             --pid-path=$HOME/nginx/log/nginx.pid                                 \
             --lock-path=$HOME/nginx/log/nginx.lock                               \
+            --http-client-body-temp-path=$HOME/nginx/client_body_temp            \
+            --http-fastcgi-temp-path=$HOME/nginx/fastcgi_temp                    \
+            --http-proxy-temp-path=$HOME/nginx/proxy_temp                        \
+            --http-scgi-temp-path=$HOME/nginx/scgi_temp                          \
+            --http-uwsgi-temp-path=$HOME/nginx/uwsgi_temp                        \            
             --user=nginx                                                         \
             --group=nginx                                                        \
             --with-cpu-opt=generic                                               \
