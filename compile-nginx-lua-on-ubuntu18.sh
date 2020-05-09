@@ -76,6 +76,7 @@ cd       $HOME/nginxsrc                                                         
             --http-uwsgi-temp-path=$HOME/nginx/uwsgi_temp                                  \
             --user=nginx                                                                   \
             --group=nginx                                                                  \
+            --build=Ubuntu                                                                 \
             --with-cpu-opt=generic                                                         \
             --with-cc-opt='-O2'                                                            \
             --with-ld-opt='-Wl,-rpath,/home/ubuntu/luajit/lib'                             \
@@ -83,6 +84,10 @@ cd       $HOME/nginxsrc                                                         
             --with-pcre-jit                                                                \
             --with-zlib=$HOME/zlibsrc                                                      \
             --with-openssl=$HOME/libresslsrc                                               \
+            --with-openssl-opt=enable-ec_nistp_64_gcc_128                                  \
+            --with-openssl-opt=no-nextprotoneg                                             \
+            --with-openssl-opt=no-weak-ssl-ciphers                                         \
+            --with-openssl-opt=no-ssl3                                                     \
             --with-http_ssl_module                                                      && \
 make                                                                                    && \
 make install
