@@ -80,6 +80,7 @@ cd       $HOME/nginxsrc                                                         
             --with-cpu-opt=generic                                                                 \
             --with-cc-opt='-static -static-libgcc -fPIE'                                           \
             --with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-rpath,/home/ubuntu/luajit/lib' \
+            --with-luajit                                                                          \
             --with-pcre=$HOME/pcresrc                                                              \
             --with-pcre-jit                                                                        \
             --with-zlib=$HOME/zlibsrc                                                              \
