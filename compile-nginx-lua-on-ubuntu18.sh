@@ -62,7 +62,7 @@ tar  -xf $HOME/nginx.tar.gz -C $HOME                                            
 rm   -rf $HOME/nginx.tar.gz                                                                     && \
 mv       $HOME/openresty-* $HOME/nginxsrc                                                       && \
 cd       $HOME/nginxsrc                                                                         && \
-./configure --prefix=$HOME                                                                         \
+./configure --prefix=$HOME/nginx                                                                   \
             --sbin-path=$HOME/nginx/bin/nginx                                                      \
             --conf-path=$HOME/nginx/conf/nginx.conf                                                \
             --error-log-path=$HOME/nginx/log/error.log                                             \
