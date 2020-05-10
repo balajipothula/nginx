@@ -62,7 +62,7 @@ tar  -xf $HOME/nginx.tar.gz -C $HOME                                            
 rm   -rf $HOME/nginx.tar.gz                                                                     && \
 mv       $HOME/openresty-* $HOME/nginxsrc                                                       && \
 cd       $HOME/nginxsrc                                                                         && \
-./configure --prefix=$HOME/nginx                                                                   \
+./configure --prefix=$HOME                                                                         \
             --sbin-path=$HOME/nginx/bin/nginx                                                      \
             --conf-path=$HOME/nginx/conf/nginx.conf                                                \
             --error-log-path=$HOME/nginx/log/error.log                                             \
@@ -74,8 +74,8 @@ cd       $HOME/nginxsrc                                                         
             --http-proxy-temp-path=$HOME/nginx/proxy_temp                                          \
             --http-scgi-temp-path=$HOME/nginx/scgi_temp                                            \
             --http-uwsgi-temp-path=$HOME/nginx/uwsgi_temp                                          \
-            --user=nginx                                                                           \
-            --group=nginx                                                                          \
+            --user=nobody                                                                          \
+            --group=nobody                                                                         \
             --build=Ubuntu                                                                         \
             --with-cpu-opt=generic                                                                 \
             --with-cc-opt='-static -static-libgcc -fPIE'                                           \
