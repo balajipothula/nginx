@@ -4,6 +4,9 @@
 # Date        : 14 September 2017,
 # Description : nginx cmds.
 
+nohup nginx > $HOME/nginx/log/nginx.log &
+nohup nginx > /dev/null
+
 # Shut down gracefully.
 sudo ./nginx -s quit
 
