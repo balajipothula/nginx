@@ -1,0 +1,17 @@
+# NGINX Daemon Service.
+[Unit]
+Description=NGINX Server
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/home/ubuntu/nginx/logs/nginx.pid
+ExecStartPre=/home/ubuntu/nginx/bin/nginx -t -q -g 'daemon on; master_process on;'
+ExecStart=/home/ubuntu/nginx/bin/nginx -g 'daemon on; master_process on;'
+ExecReload=/home/ubuntu/nginx/bin/nginx -g 'daemon on; master_process on;' -s reload
+ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /home/ubuntu/nginx/logs/nginx.pid
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
