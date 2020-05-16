@@ -29,7 +29,7 @@ sudo apt -y install autoconf        \
 git clone https://github.com/openresty/luajit2.git              && \
 mv        $HOME/luajit2 $HOME/luajitsrc                         && \
 cd        $HOME/luajitsrc                                       && \
-make                                                            && \
+make XCFLAGS="-DLUAJIT_ENABLE_GC64"                             && \
 make install CC="gcc -m32" TARGET_SYS=Linux PREFIX=$HOME/luajit
 
 # setting luajit library and include path.
@@ -45,13 +45,13 @@ rm   -rf $HOME/zlib.tar.gz                                        && \
 mv       $HOME/zlib-* $HOME/zlibsrc
 
 # pcre downloading and extracting.
-curl -JL https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz -o $HOME/pcre.tar.gz && \
+curl -JL https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz -o $HOME/pcre.tar.gz && \
 tar  -xf $HOME/pcre.tar.gz -C $HOME                                          && \
 rm   -rf $HOME/pcre.tar.gz                                                   && \
 mv       $HOME/pcre-* $HOME/pcresrc
 
 # libressl downloading and extracting.
-curl -JL https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.6.1.tar.gz -o $HOME/libressl.tar.gz && \
+curl -JL https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.1.tar.gz -o $HOME/libressl.tar.gz && \
 tar  -xf $HOME/libressl.tar.gz -C $HOME                                                              && \
 rm   -rf $HOME/libressl.tar.gz                                                                       && \
 mv       $HOME/libressl-* $HOME/libresslsrc
@@ -93,6 +93,9 @@ cd       $HOME/nginxsrc                                                         
             --with-http_ssl_module                                                              && \
 make                                                                                            && \
 make install
+
+echo "export PATH=$PATH:$HOME/nginx/bin:$HOME/nginx/luajit/bin" | tee -a $HOME/.bashrc $HOME/.profile
+source $HOME/.bashrc $HOME/.profile
 
 # create nginx temp folders.
 mkdir -p $HOME/nginx/{client_body_temp,fastcgi_temp,proxy_temp,scgi_temp,uwsgi_temp}
