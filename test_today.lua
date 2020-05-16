@@ -1,2 +1,2 @@
 local today = require("todaylib")
-today.date()
+print(today.date())
