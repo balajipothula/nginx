@@ -103,3 +103,4 @@ mkdir -p $HOME/nginx/{client_body_temp,fastcgi_temp,proxy_temp,scgi_temp,uwsgi_t
 # cleaning process.
 rm -rf $HOME/{luajit,luajitsrc,nginxsrc,libresslsrc,pcresrc,zlibsrc}
 rm -rf $HOME/nginx/{COPYRIGHT,resty.index,pod,site}
+rm -v  $HOME/nginx/conf/!("nginx.conf"|"mime.types")
