@@ -1,5 +1,6 @@
 # Build Lua Object File.
-# --with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-rpath,/home/ubuntu/luajit/lib /home/ubuntu/todaylib.o'
+# --with-ld-opt="-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-rpath,/home/ubuntu/luajit/lib /home/ubuntu/todaylib.o"
+# --with-ld-opt="/home/ubuntu/addlib.o /home/ubuntu/sublib.o /home/ubuntu/mullib.o /home/ubuntu/divlib.o"
 luajit -b -g todaylib.lua todaylib.o
 
 # Test Today Lua.
