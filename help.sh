@@ -5,7 +5,8 @@
 # aRCHIVE all oBJECT files (eg. addlib.o, sublib.o, mullib.o and divlib.o)
 ar rcus libcalc.a *.o
 
-# if we specify the lib path then no need of lib prefix for calc archive.
+# if we specify the lib directory path then,
+# no need of lib prefix for calc archive.
 --with-ld-opt="-L/home/ubuntu/liblua -Wl,--whole-archive -lcalc -Wl,--no-whole-archive"
 
 # compile lua module files to .o object files,
