@@ -2,6 +2,8 @@
 
 --with-cc-opt="-m64 -mtune=native -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wno-sign-compare -Wno-string-plus-int -Wno-deprecated-declarations -Wno-unused-parameter -Wno-unused-const-variable -Wno-conditional-uninitialized -Wno-mismatched-tags -Wno-c++11-extensions -Wno-sometimes-uninitialized -Wno-parentheses-equality -Wno-tautological-compare -Wno-self-assign -Wno-deprecated-register -Wno-deprecated -Wno-invalid-source-encoding -Wno-pointer-sign -Wno-parentheses -Wno-enum-conversion"
 
+--with-cc-opt="-static -static-libgcc" --with-ld-opt="-static" --with-cpu-opt=generic
+
 --with-ld-opt="-lrt -ljemalloc -Wl,-z,relro"
 
 # Build Lua Object File.
